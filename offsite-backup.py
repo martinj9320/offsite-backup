@@ -1,32 +1,21 @@
 import requests
 import urllib3
 
-# IP address of the Proxmox node that you want to back up
-PVE_IP = ""
-# IP address of the remote TrueNAS server
-TrueNAS_IP = ""
-# IP address of your PiKVM
-PiKVM_IP = ""
+PVE_IP = "" # IP address of the Proxmox node that you want to back up
+TrueNAS_IP = "" # IP address of the remote TrueNAS server
+PiKVM_IP = "" # IP address of your PiKVM
 
-# Name of the Proxmox node that you want to back up
-PVE_Node_Name = ""
+PVE_Node_Name = "" # Name of the Proxmox node that you want to back up
 
-# ID that you assigned when adding the SMB share as a Proxmox backup storage target
-PVE_Backup_Storage_ID = ""
+PVE_Backup_Storage_ID = "" # ID that you assigned when adding the SMB share as a Proxmox backup storage target
 
-# Get the ID of the preconfigured replication task that you want to run by executing "midctl call replication.query" in the TrueNAS shell
-TrueNAS_Replication_Task_ID = ""
+TrueNAS_Replication_Task_ID = "" # Get the ID of the preconfigured replication task that you want to run by executing "midctl call replication.query" in the TrueNAS shell
 
-# ID that you assigned when adding the API key
-PVE_API_Key_ID = ""
-# Generate an API key by navigating to Datacenter > Permissions > API Tokens > Add in the Proxmox web interface
-PVE_API_Key = ""
-# Generate an API key by navigating to Settings > API Keys > Add in the TrueNAS web interface
-TrueNAS_API_Key = ""
-# Username of your PiKVM, default is "admin"
-PiKVM_Username = ""
-# Password of your PiKVM
-PiKVM_Password = ""
+PVE_API_Key_ID = "" # ID that you assigned when adding the API key
+PVE_API_Key = "" # Generate an API key by navigating to Datacenter > Permissions > API Tokens > Add in the Proxmox web interface
+TrueNAS_API_Key = "" # Generate an API key by navigating to Settings > API Keys > Add in the TrueNAS web interface
+PiKVM_Username = "" # Username of your PiKVM, default is "admin"
+PiKVM_Password = "" # Password of your PiKVM
 
 # Disable warnings that are raised when SSL certificates are not verified
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
