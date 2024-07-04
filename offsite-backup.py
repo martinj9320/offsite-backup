@@ -41,7 +41,7 @@ while True:
         break
 
 # Back up all Proxmox VMs to the specified backup storage target
-requests.post("https://" + PVE_IP + ":8006/api2/json/nodes/" + PVE_Node_Name + "/vzdump", data={"all": "1", "compress": "zstd", "storage": PVE_Backup_Storage_ID}, headers={"Authorization": f"PVEAPIToken=root@pam!{PVE_API_Key_ID}={PVE_API_Key}"}, verify=False)
+requests.post("https://" + PVE_IP + ":8006/api2/json/nodes/" + PVE_Node_Name + "/vzdump", data={"all": "1", "compress": "zstd", "storage": PVE_Backup_Storage_ID, "notes-template": "{{guestname}}"}, headers={"Authorization": f"PVEAPIToken=root@pam!{PVE_API_Key_ID}={PVE_API_Key}"}, verify=False)
 
 # Wait for all Proxmox backups to finish
 while True:
