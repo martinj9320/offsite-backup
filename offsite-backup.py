@@ -48,7 +48,8 @@ while True:
     TasksResponse = (requests.get("https://" + PVE_IP + ":8006/api2/json/cluster/tasks", headers={"Authorization": f"PVEAPIToken=root@pam!{PVE_API_Key_ID}={PVE_API_Key}"}, verify=False).json()).get("data", [])
     StatusNotInTaskResponseObject = []
     for TaskResponseObject in TasksResponse:
-        if TaskResponseObject.get("type") == "vzdump" and "status" not in TaskResponseObject: StatusNotInTaskResponseObject.append(TaskResponseObject)
+        if TaskResponseObject.get("type") == "vzdump" and "status" not in TaskResponseObject:
+            StatusNotInTaskResponseObject.append(TaskResponseObject)
     if len(StatusNotInTaskResponseObject) == 0:
         break
 
